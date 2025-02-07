@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>Tejasvat R</title>
+    </head>
+    <body>
+        <h2>Guess the number game</h2>
+        <div class="form">
+            <p>Enter a number between 1-100</p>
+            <label for="guess">Enter a guess:</label>
+             <input type="text" id="guess" class="guess">
+
+            <input type="submit" value="Submit guess" class="guessS" id="submitguess">
+        </div>
+        <script>
+            let y = Math.floor(Math.random()*100+1);
+            let guess1 =1;
+            document.getElementById("submitguess").onclick = function(){
+                let x = document.getElementById("guess").value;
+                if(x==y){
+                    alert("congrats the number is:"+y);
+                }
+                else if(x>y){
+                    guess1++;
+                    alert("try a smaller number");
+                }
+                else{
+                    guess++;
+                    alert("try a greater number")
+                }
+            }
+        </script>
+    </body>
+</html>
