@@ -1,0 +1,26 @@
+<html>    
+    <head>        
+        <title>Tejasvat</title>    
+    </head>    
+    <body>        
+        <h2>Find Duplicates</h2>        
+        <input type="text" id="arrayInput">      
+        <button id="findBtn">Check</button>        
+        <p>Duplicates: <span id="duplicates"></span></p>        
+        <p>Unique: <span id="uniqueArray"></span></p>        
+        <script>            
+            document.getElementById("findBtn").onclick = function() {                
+                let arr = document.getElementById("arrayInput").value.split(",").map(n => n.trim());                
+                let unique = [], duplicates = [];                
+                for (let num of arr) {                    
+                    if (unique.includes(num)) duplicates.push(num);                    
+                    else unique.push(num);                
+                }                
+                document.getElementById("duplicates").textContent = duplicates.length ? [...new Set(duplicates)].join(", ") : "None";                
+                document.getElementById("uniqueArray").textContent = unique.join(", ");            
+            }        
+        </script>    
+    </body>
+</html>
+
+
