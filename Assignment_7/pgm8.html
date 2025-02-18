@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Tejasvat R</title>
+    </head>
+    <body>
+        <h2>Open console for sorted arrays</h2>
+        <script>
+            function bubbleSort(arr, ascending = true) {
+                let n = arr.length;
+                for (let i = 0; i < n - 1; i++) {
+                    for (let j = 0; j < n - i - 1; j++) {
+                        if ((ascending && arr[j] > arr[j + 1]) || (!ascending && arr[j] < arr[j + 1])) {
+                            [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+                        }
+                    }
+                }
+                return arr;
+            }
+
+            let numbers = [5, 3, 8, 1, 2];
+            console.log("Ascending:", bubbleSort([...numbers], true));
+            console.log("Descending:", bubbleSort([...numbers], false));
+        </script>
+    </body>
+</html>
+
+
