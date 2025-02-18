@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Tejasvat</title>
+    </head>
+    <body>
+        <h2>Enter numbers to find second and third largest</h2>
+        <input type="text" id="arrayInput">
+        <button id="findBtn">Find</button>
+        <p>Second Largest: <span id="secondLargest"></span></p>
+        <p>Third Largest: <span id="thirdLargest"></span></p>
+        <script>
+            function finds(arr) {
+                let uniqueArr = [...new Set(arr)].sort((a, b) => b - a);
+                document.getElementById("secondLargest").textContent = uniqueArr[1] !== undefined ? uniqueArr[1] : "Not enough numbers";
+                document.getElementById("thirdLargest").textContent = uniqueArr[2] !== undefined ? uniqueArr[2] : "Not enough numbers";
+            }
+            document.getElementById("findBtn").onclick = function() {
+                let arr = document.getElementById("arrayInput").value.split(",").map(Number).filter(n => !isNaN(n));
+                finds(arr);
+            }
+        </script>
+    </body>
+</html>
+
+
