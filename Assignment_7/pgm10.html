@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Tejasvat</title>
+    </head>
+    <body>
+        <h2>Enter Rows and Columns</h2>
+        <input type="number" id="rows" placeholder="Rows">
+        <input type="number" id="cols" placeholder="Columns">
+        <button onclick="generateTable()">Generate Table</button>
+        <br><br>
+        <table id="table" border="1"></table>
+
+        <script>
+            function generateTable() {
+                let r = document.getElementById("rows").value;
+                let c = document.getElementById("cols").value;
+                let table = document.getElementById("table");
+                table.innerHTML = "";
+                for (let i = 0; i < r; i++) {
+                    let row = table.insertRow();
+                    for (let j = 0; j < c; j++) {
+                        let cell = row.insertCell();
+                        cell.textContent = `(${i+1},${j+1})`;
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
+
+
